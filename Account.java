@@ -13,10 +13,10 @@ public class Account {
     }
 
     public void depositMoney(int amount, int pin) {
-       
+
         if (this.pin == pin)
-        balance += amount;
-        if(this.pin != pin)
+            balance += amount;
+        if (this.pin != pin)
             System.out.println("your pin is incorrect");
 
 
@@ -28,9 +28,9 @@ public class Account {
 
     public void withdrawMoney(int amount) {
 
-        if (amount > balance){
-            System.out.println("sorry you dont have up to the stated amount");       }
-        else {
+        if (amount > balance) {
+            System.out.println("sorry you dont have up to the stated amount");
+        } else {
             balance = balance - amount;
         }
     }
@@ -39,12 +39,11 @@ public class Account {
 
         if (this.pin == pin)
             this.pin = pin;
-          else
-              if(this.pin != pin)
+        else if (this.pin != pin)
             System.out.println("your pin is incorrect");
 
 
     }
 
-
+}
  
