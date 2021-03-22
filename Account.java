@@ -1,49 +1,42 @@
-package chapterFive;
+package BankProject;
 
-import javax.swing.*;
 
 public class Account {
-
-    private int balance;
+    public int accountNumber;
+    private double balance;
     private int pin;
 
-    public Account(int balance, int pin) {
-        this.balance = balance;
-        this.pin = pin;
+    public void createAccountNumber() {
+        accountNumber++;
     }
 
-    public void depositMoney(int amount, int pin) {
 
-        if (this.pin == pin)
-            balance += amount;
-        if (this.pin != pin)
-            System.out.println("your pin is incorrect");
+    public int getAccountNumber() {
+       return accountNumber;
+    }
 
+    public void depositMoney(double amount) {
+        if (amount > 0)
+        balance += amount;
 
     }
 
-    public int getBalance() {
+    public double getAccountBalance() {
         return balance;
     }
 
-    public void withdrawMoney(int amount) {
+    public void withdrawMoney(double amount) {
 
-        if (amount > balance) {
-            System.out.println("sorry you dont have up to the stated amount");
-        } else {
-            balance = balance - amount;
-        }
+        if (balance >= amount && amount > 0)
+
+        balance -= amount;
     }
 
-    public void customerPin(int pin) {
-
-        if (this.pin == pin)
-            this.pin = pin;
-        else if (this.pin != pin)
-            System.out.println("your pin is incorrect");
-
-
+    public void createPin(int pin) {
+        this.pin = pin;
     }
 
+    public int getPin() {
+        return pin;
+    }
 }
- 
